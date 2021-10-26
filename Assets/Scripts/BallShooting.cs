@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BallShooting : MonoBehaviour
 {
+    public float moveSpeed;
+    Vector2 movement;
     public Camera cam;
     public Rigidbody2D rb;
     Vector2 mousePos;
@@ -18,6 +20,8 @@ public class BallShooting : MonoBehaviour
             Shoot();
         }
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
     }
 
     void FixedUpdate()
@@ -25,6 +29,7 @@ public class BallShooting : MonoBehaviour
         Vector2 lookDir = mousePos - rb.position;
         float angle = Mathf.Atan2(lookDir.y,lookDir.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
     void Shoot()
