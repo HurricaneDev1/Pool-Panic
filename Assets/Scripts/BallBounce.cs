@@ -23,6 +23,6 @@ public class BallBounce : MonoBehaviour
         var speed = lastVelocity.magnitude;
         var direction = Vector3.Reflect(lastVelocity.normalized, col.contacts[0].normal);
 
-        rb.velocity = direction * Mathf.Max(speed,50f);
+        rb.velocity = direction * Mathf.Max(speed,0f);
     }
 }

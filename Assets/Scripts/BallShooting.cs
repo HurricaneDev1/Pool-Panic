@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BallShooting : MonoBehaviour
 {
+    public int ammo;
     public float moveSpeed;
     Vector2 movement;
     public Camera cam;
@@ -17,7 +18,11 @@ public class BallShooting : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1"))
         {
-            Shoot();
+            if(ammo > 0)
+            {
+                Shoot();
+                ammo --;
+            }
         }
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         movement.x = Input.GetAxisRaw("Horizontal");
@@ -37,5 +42,14 @@ public class BallShooting : MonoBehaviour
         GameObject ball = Instantiate(cueBall,firePoint.position,firePoint.rotation);
         Rigidbody2D rig = ball.GetComponent<Rigidbody2D>();
         rig.AddForce(firePoint.up * ballSpeed, ForceMode2D.Impulse);
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.tag == "Ball")
+        {
+            ammo ++;
+            Destroy(col.gameObject);
+        }
     }
 }
