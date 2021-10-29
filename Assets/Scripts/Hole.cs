@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Hole : MonoBehaviour
 {
-    public BallShooting shoot;
     public GameObject Player;
     public Transform spawnPoint;
 
@@ -12,13 +11,14 @@ public class Hole : MonoBehaviour
     {
         if(col.tag == "Ball")
         {
-            shoot.ammo ++;
             Destroy(col.gameObject);
+            Player.GetComponentInChildren<BallShooting>().ammo ++;
         }
 
         if(col.tag == "Player")
         {
             Invoke("SpawnPlayer", 2.0f);
+            Destroy(col.gameObject);
         }
     }
 

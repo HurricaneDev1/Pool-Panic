@@ -119,9 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5618b3c226721ec42b8881d758bea466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo: 2147483647
+  ammo: 1
   moveSpeed: 10
-  cam: {fileID: 0}
+  cam: {fileID: 3106710605831940444, guid: 930d3bb5264002d49abdd80c05bb9e41, type: 3}
   rb: {fileID: 1185576632}
   firePoint: {fileID: 6236602079013080613}
   cueBall: {fileID: 3227335817691244473, guid: 084d92a2c3d62874abd567398feea551, type: 3}
