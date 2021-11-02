@@ -19,10 +19,19 @@ public class BallBounce : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D col)
-    {
+    {   
         var speed = lastVelocity.magnitude;
         var direction = Vector3.Reflect(lastVelocity.normalized, col.contacts[0].normal);
 
-        rb.velocity = direction * Mathf.Max(speed,0f);
+        if(col.gameObject.tag != "Ball")
+        {
+            rb.velocity = direction * Mathf.Max(speed,0f);
+        }
+
+        if(col.gameObject.tag == "Ball")
+        {
+            Rigidbody2D rig = col.gameObject.GetComponent<Rigidbody2D>();
+            rig.AddForce(speed * direction * -40f);
+        }
     }
 }

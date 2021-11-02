@@ -9,15 +9,21 @@ public class Hole : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.tag == "Ball")
+        if(col.tag == "CueBall")
         {
             Destroy(col.gameObject);
-            Player.GetComponentInChildren<BallShooting>().ammo ++;
+            BallShooting[] objects = FindObjectsOfType<BallShooting>();
+            objects[0].ammo ++;
         }
 
         if(col.tag == "Player")
         {
             Invoke("SpawnPlayer", 2.0f);
+            Destroy(col.gameObject);
+        }
+
+        if(col.tag == "Ball")
+        {
             Destroy(col.gameObject);
         }
     }

@@ -46,7 +46,7 @@ public class BallShooting : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.tag == "Ball")
+        if(col.tag == "CueBall")
         {
             ammo ++;
             Destroy(col.gameObject);
