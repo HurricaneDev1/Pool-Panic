@@ -5,6 +5,7 @@ using UnityEngine;
 public class EightBall : MonoBehaviour
 {
     public GameObject Eball;
+    public double actionTime = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +20,14 @@ public class EightBall : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.tag == "CueBall")
+        if(Time.time > actionTime)
         {
-            Instantiate(Eball, transform.position, transform.rotation);
+            actionTime = Time.time;
+            actionTime += 0.2;
+            if(col.gameObject.tag == "CueBall")
+            {
+                Instantiate(Eball, transform.position, transform.rotation);
+            }
         }
     }
 }

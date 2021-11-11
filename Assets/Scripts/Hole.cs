@@ -6,6 +6,7 @@ public class Hole : MonoBehaviour
 {
     public GameObject Player;
     public Transform spawnPoint;
+    public GameObject Eball;
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -14,6 +15,7 @@ public class Hole : MonoBehaviour
             Destroy(col.gameObject);
             BallShooting[] objects = FindObjectsOfType<BallShooting>();
             objects[0].ammo ++;
+            Instantiate(Eball, spawnPoint.position, spawnPoint.rotation);
         }
 
         if(col.tag == "Player")
@@ -26,6 +28,7 @@ public class Hole : MonoBehaviour
         {
             Destroy(col.gameObject);
         }
+
     }
 
     void SpawnPlayer()
