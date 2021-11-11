@@ -21,10 +21,7 @@ public class EightBall : MonoBehaviour
     {
         if(col.gameObject.tag == "CueBall")
         {
-            for(int i = 0; i < 5; i++)
-            {
-                Instantiate(Eball, transform.position, transform.rotation);
-            }
+            Instantiate(Eball, transform.position, transform.rotation);
         }
     }
 }
