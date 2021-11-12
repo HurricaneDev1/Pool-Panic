@@ -12,6 +12,7 @@ public class BallShooting : MonoBehaviour
     public Transform firePoint;
     public GameObject cueBall;
     public float ballSpeed = 20f;
+    public bool strongShot = false;
     // Update is called once per frame
     void Update()
     {
@@ -29,7 +30,13 @@ public class BallShooting : MonoBehaviour
     {
         GameObject ball = Instantiate(cueBall,firePoint.position,firePoint.rotation);
         Rigidbody2D rig = ball.GetComponent<Rigidbody2D>();
+        if(strongShot == true)
+        {
+            ballSpeed = 75;
+        }
         rig.AddForce(firePoint.up * ballSpeed, ForceMode2D.Impulse);
+        ballSpeed = 30f;
+        strongShot = false;
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -37,6 +44,12 @@ public class BallShooting : MonoBehaviour
         if(col.tag == "CueBall")
         {
             ammo ++;
+            Destroy(col.gameObject);
+        }
+
+        if(col.tag == "powerUp")
+        {
+            strongShot = true;
             Destroy(col.gameObject);
         }
     }

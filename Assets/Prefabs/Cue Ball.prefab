@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7325017703964303005}
   - component: {fileID: 7172304823799307016}
   - component: {fileID: 5167083869586317621}
+  - component: {fileID: -6207415080194379658}
   m_Layer: 0
   m_Name: Cue Ball
   m_TagString: CueBall
@@ -144,3 +145,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.13130331, y: 0.13114378}
   m_EdgeRadius: 0
+--- !u!114 &-6207415080194379658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3227335817691244473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c69d80f062447a46a8b0c65955ec0d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextFireTime: 0
+  attackRange: 2
