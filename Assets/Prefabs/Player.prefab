@@ -252,6 +252,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   rb: {fileID: 521014390739948405}
+  blackHole: {fileID: 4954061638652999582, guid: c17ff6090e893db408d134142ba5386c, type: 3}
+  hole: {fileID: 0}
 --- !u!61 &3460106396865384026
 BoxCollider2D:
   m_ObjectHideFlags: 0

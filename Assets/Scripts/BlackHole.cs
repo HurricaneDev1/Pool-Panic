@@ -56,7 +56,7 @@ public class BlackHole : MonoBehaviour
         foreach(Collider2D enemy in hitEnemies){
 
             // Gets the transform and rigidbody of targeted enemies.
-            if(enemy.tag == "Ball")
+            if(enemy.tag == "Ball" || enemy.tag == "CueBall")
             {
                 Transform enemyForm = enemy.GetComponent<Transform>();
                 Rigidbody2D rig = enemy.GetComponent<Rigidbody2D>();

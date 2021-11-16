@@ -7,11 +7,18 @@ public class PlayerControls : MonoBehaviour
     public float moveSpeed;
     public Rigidbody2D rb;
     Vector2 movement;
+    public GameObject blackHole;
+    public GameObject hole;
     // Update is called once per frame
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            hole = Instantiate(blackHole,transform.position,transform.rotation);
+        }
     }
 
     void FixedUpdate()
