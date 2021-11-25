@@ -13,6 +13,7 @@ public class BallShooting : MonoBehaviour
     public GameObject cueBall;
     public float ballSpeed = 20f;
     public bool strongShot = false;
+    public int health = 6;
     // Update is called once per frame
     void Update()
     {
@@ -51,6 +52,15 @@ public class BallShooting : MonoBehaviour
         {
             strongShot = true;
             Destroy(col.gameObject);
+        }
+
+        if(col.tag == "Ball")
+        {
+            health -= 1;
+            if(health <= 0)
+            {
+                Debug.Log("You lost");
+            }
         }
     }
 }

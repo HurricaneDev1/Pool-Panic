@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OBjectiveScript : MonoBehaviour
+public class ObjectiveScript : MonoBehaviour
 {
     public float actionTime = 0;
     public GameObject[] game;
