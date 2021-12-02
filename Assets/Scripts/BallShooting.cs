@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BallShooting : MonoBehaviour
 {
@@ -14,9 +15,41 @@ public class BallShooting : MonoBehaviour
     public float ballSpeed = 20f;
     public bool strongShot = false;
     public int health = 6;
+    public int numOfHearts = 10;
+    public Image[] hearts;
+    public Sprite fullHeart;
+    public Sprite emptySprite;
+    public Image ball;
     // Update is called once per frame
     void Update()
     {
+        if(health > numOfHearts)
+        {
+            health = numOfHearts;
+        }
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if(i < health){
+                hearts[i].sprite = fullHeart;
+            }
+            else{
+                hearts[i].sprite = emptySprite;
+            }
+
+            if(i < numOfHearts){
+                hearts[i].enabled = true;
+            }
+            else{
+                hearts[i].enabled = false;
+            }
+        }
+        if(ammo > 0){
+            ball.enabled = true;
+        }
+        else{
+            ball.enabled = false;
+        }
+
         if(Input.GetButtonDown("Fire1"))
         {
             if(ammo > 0)
