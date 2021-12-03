@@ -102,7 +102,7 @@ MonoBehaviour:
   bullet: {fileID: 1521018725773955697, guid: c30fc67c0b3e68f40a39315315eaa695, type: 3}
   firepoint: {fileID: 4323993281585714332}
   actionTime: 0
-  speed: 0.03
+  speed: 10
 --- !u!58 &4323993280024776590
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -31,7 +31,13 @@ public class BallBounce : MonoBehaviour
         if(col.gameObject.tag == "Ball")
         {
             Rigidbody2D rig = col.gameObject.GetComponent<Rigidbody2D>();
-            rig.AddForce(speed * direction * -65f);
+            if(this.tag == "CueBall")
+            {
+                rig.AddForce(speed * direction * -65f);
+            }
+            else{
+                rig.AddForce(speed * direction * -45f);
+            }
         }
     }
 }

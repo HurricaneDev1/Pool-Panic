@@ -8,6 +8,8 @@ public class Magic : MonoBehaviour
     public GameObject firepoint;
     public float actionTime;
     public float speed = 5;
+    Collider2D col;
+    List<GameObject> bullets = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,7 @@ public class Magic : MonoBehaviour
         if(Time.time > actionTime)
         {
             actionTime = Time.time;
-            actionTime += 4;
+            actionTime += 5;
             for(int i = 0; i < 4; i++){
                 MagicShot();
             }
@@ -38,7 +40,21 @@ public class Magic : MonoBehaviour
             firepoint.transform.eulerAngles.z + 100
         );
         GameObject bull = Instantiate(bullet,firepoint.transform.position,firepoint.transform.rotation);
+        col = bull.gameObject.GetComponent<Collider2D>();
+        col.isTrigger = true;
         Rigidbody2D rig = bull.GetComponent<Rigidbody2D>();
         rig.AddForce(firepoint.transform.up * speed, ForceMode2D.Impulse);
+        bullets.Add(bull);
+        Invoke("makeTrigger", 0.3f);
+    }
+
+    void makeTrigger()
+    {
+        for (int i = 0; i < bullets.Count; i++)
+        {
+            col = bullets[i].gameObject.GetComponent<Collider2D>();
+            col.isTrigger = false;  
+        }
+        bullets.Clear();
     }
 }

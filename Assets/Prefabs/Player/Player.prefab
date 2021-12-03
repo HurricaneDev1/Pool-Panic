@@ -103,7 +103,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   firePoint: {fileID: 6236602079013080613}
   cueBall: {fileID: 3227335817691244473, guid: 084d92a2c3d62874abd567398feea551, type: 3}
-  ballSpeed: 35
+  ballSpeed: 30
   strongShot: 0
   health: 10
   numOfHearts: 10
@@ -253,7 +253,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &521014390739948406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,7 +280,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.005921304, y: 0.0004074052}
