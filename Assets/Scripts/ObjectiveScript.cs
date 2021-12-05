@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class ObjectiveScript : MonoBehaviour
 {
     public float actionTime = 0;
     public int wave = 1;
+    public TextMeshProUGUI waveText;
     public GameObject[] game;
     public Transform spawnPoint;
     public Transform summon;
@@ -44,7 +47,7 @@ public class ObjectiveScript : MonoBehaviour
                     Spawning(ballList[randBall]);
                 }
                 wave += 1;
-                Debug.Log("Wave: " + wave);
+                waveText.text = "Wave: " + wave;
             }
         }
     }

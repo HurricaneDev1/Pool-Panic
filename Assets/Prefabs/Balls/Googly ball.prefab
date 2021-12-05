@@ -12,11 +12,10 @@ GameObject:
   - component: {fileID: 2377123741137927708}
   - component: {fileID: 2377123741137927710}
   - component: {fileID: 2377123741137927905}
-  - component: {fileID: 2377123741137927904}
   - component: {fileID: 2377123741137927711}
   m_Layer: 0
   m_Name: Googly ball
-  m_TagString: Ball
+  m_TagString: gBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,20 +122,6 @@ CircleCollider2D:
   m_Offset: {x: -0.0056645633, y: -0.00094412564}
   serializedVersion: 2
   m_Radius: 0.0901379
---- !u!114 &2377123741137927904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2377123741137927907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71c4d53383331a949911453c97935efd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  holdingBall: 0
-  ball: {fileID: 3227335817691244473, guid: 084d92a2c3d62874abd567398feea551, type: 3}
 --- !u!114 &2377123741137927711
 MonoBehaviour:
   m_ObjectHideFlags: 0

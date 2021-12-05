@@ -39,5 +39,11 @@ public class BallBounce : MonoBehaviour
                 rig.AddForce(speed * direction * -45f);
             }
         }
+
+        if(col.gameObject.tag == "gBall")
+        {
+            Rigidbody2D rig = col.gameObject.GetComponent<Rigidbody2D>();
+            rig.AddForce(speed * direction * 45f);
+        }
     }
 }

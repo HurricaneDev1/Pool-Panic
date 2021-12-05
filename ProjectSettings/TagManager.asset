@@ -9,6 +9,7 @@ TagManager:
   - EBall
   - powerUp
   - Stick
+  - gBall
   layers:
   - Default
   - TransparentFX
