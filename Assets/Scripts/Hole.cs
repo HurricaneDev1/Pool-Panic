@@ -24,7 +24,7 @@ public class Hole : MonoBehaviour
             Destroy(col.gameObject);
         }
 
-        if(col.tag == "Ball" || col.tag == "gBall")
+        if(col.tag == "Ball" || col.tag == "gBall" || col.tag == "Bullet")
         {
             Destroy(col.gameObject);
         }

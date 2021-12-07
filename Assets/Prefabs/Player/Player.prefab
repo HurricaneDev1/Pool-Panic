@@ -103,7 +103,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   firePoint: {fileID: 6236602079013080613}
   cueBall: {fileID: 3227335817691244473, guid: 084d92a2c3d62874abd567398feea551, type: 3}
-  ballSpeed: 30
+  ballSpeed: 35
   strongShot: 0
   health: 10
   numOfHearts: 10

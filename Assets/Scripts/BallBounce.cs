@@ -23,12 +23,12 @@ public class BallBounce : MonoBehaviour
         var speed = lastVelocity.magnitude;
         var direction = Vector3.Reflect(lastVelocity.normalized, col.contacts[0].normal);
 
-        if(col.gameObject.tag != "Ball")
+        if(col.gameObject.tag != "Ball" && col.gameObject.tag != "Bullet")
         {
             rb.velocity = direction * Mathf.Max(speed,0f);
         }
 
-        if(col.gameObject.tag == "Ball")
+        if(col.gameObject.tag == "Ball" || col.gameObject.tag == "Bullet")
         {
             Rigidbody2D rig = col.gameObject.GetComponent<Rigidbody2D>();
             if(this.tag == "CueBall")

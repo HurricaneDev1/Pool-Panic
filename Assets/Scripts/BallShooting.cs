@@ -87,7 +87,7 @@ public class BallShooting : MonoBehaviour
             Destroy(col.gameObject);
         }
 
-        if(col.tag == "Ball" || col.tag == "gBall")
+        if(col.tag == "Ball" || col.tag == "gBall" || col.tag == "Bullet")
         {
             health -= 1;
             if(health <= 0)

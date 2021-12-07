@@ -10,6 +10,7 @@ TagManager:
   - powerUp
   - Stick
   - gBall
+  - Bullet
   layers:
   - Default
   - TransparentFX
