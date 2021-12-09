@@ -97,3 +97,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextFireTime: 0
   attackRange: 4
+  cooldownTime: 0.5

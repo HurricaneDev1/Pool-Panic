@@ -15,6 +15,7 @@ public class Dasher : MonoBehaviour
     void Start()
     {
         rig = this.GetComponent<Rigidbody2D>();
+        actionTime = Time.time + 2;
     }
 
     // Update is called once per frame

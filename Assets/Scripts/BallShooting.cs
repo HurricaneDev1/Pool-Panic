@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class BallShooting : MonoBehaviour
 {
+    public bool invisible = false;
     public int ammo;
     public float moveSpeed;
     Vector2 movement;
@@ -27,6 +28,7 @@ public class BallShooting : MonoBehaviour
         {
             health = numOfHearts;
         }
+
         for (int i = 0; i < hearts.Length; i++)
         {
             if(i < health){
@@ -89,10 +91,14 @@ public class BallShooting : MonoBehaviour
 
         if(col.tag == "Ball" || col.tag == "gBall" || col.tag == "Bullet")
         {
-            health -= 1;
+            if(invisible == false)
+            {
+                health -= 1;
+            }
+    
             if(health <= 0)
             {
-                Debug.Log("You lost");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
             }
         }
     }

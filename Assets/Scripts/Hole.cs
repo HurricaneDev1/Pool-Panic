@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Hole : MonoBehaviour
 {
     public GameObject Player;
     public Transform spawnPoint;
-    public GameObject Eball;
+    public ObjectiveScript ob;
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -15,13 +15,12 @@ public class Hole : MonoBehaviour
             Destroy(col.gameObject);
             BallShooting[] objects = FindObjectsOfType<BallShooting>();
             objects[0].ammo ++;
-            Instantiate(Eball, spawnPoint.position, spawnPoint.rotation);
+            ob.Spawning(-1);
         }
 
         if(col.tag == "Player")
         {
-            Invoke("SpawnPlayer", 2.0f);
-            Destroy(col.gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
 
         if(col.tag == "Ball" || col.tag == "gBall" || col.tag == "Bullet")
@@ -30,9 +29,4 @@ public class Hole : MonoBehaviour
         }
 
     }
-
-    void SpawnPlayer()
-    {
-        Instantiate(Player, spawnPoint.position, spawnPoint.rotation);
-    }   
 }

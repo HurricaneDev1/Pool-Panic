@@ -46,7 +46,7 @@ public class Magic : MonoBehaviour
         rig.AddForce(firepoint.transform.up * speed, ForceMode2D.Impulse);
         bullets.Add(bull);
         Invoke("makeTrigger", 0.3f);
-        Invoke("clearBullets", 4.9f);
+        Invoke("clearBullets", 4.5f);
     }
 
     void makeTrigger()
@@ -62,7 +62,10 @@ public class Magic : MonoBehaviour
     {
         for(int i = 0; i < bullets.Count; i++)
         {
-            Destroy(bullets[i]);
+            if(bullets[i] != null)
+            {
+                Destroy(bullets[i]);
+            }
         }
         bullets.Clear();
     }

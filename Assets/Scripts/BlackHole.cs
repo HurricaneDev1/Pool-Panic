@@ -6,6 +6,7 @@ public class BlackHole : MonoBehaviour
 {
     public float nextFireTime = 0;
     public float attackRange;
+    public float cooldownTime;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,6 @@ public class BlackHole : MonoBehaviour
     }
 
     void Pull(){
-        float cooldownTime = 0.1f;
         if(Time.time > nextFireTime)
         {
             float launchForce = 1000;

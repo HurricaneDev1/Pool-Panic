@@ -15,10 +15,10 @@ public class PlayerControls : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            hole = Instantiate(blackHole,transform.position,transform.rotation);
-        }
+        // if(Input.GetKeyDown(KeyCode.E))
+        // {
+        //     hole = Instantiate(blackHole,transform.position,transform.rotation);
+        // }
     }
 
     void FixedUpdate()

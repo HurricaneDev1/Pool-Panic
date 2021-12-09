@@ -34,6 +34,7 @@ public class BallBounce : MonoBehaviour
             if(this.tag == "CueBall")
             {
                 rig.AddForce(speed * direction * -65f);
+                rb.AddForce(speed * direction * 15f);
             }
             else{
                 rig.AddForce(speed * direction * -45f);
