@@ -7,6 +7,8 @@ public class Hole : MonoBehaviour
     public GameObject Player;
     public Transform spawnPoint;
     public ObjectiveScript ob;
+    public float actionTime;
+    public BallShooting ball;
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -18,15 +20,22 @@ public class Hole : MonoBehaviour
             ob.Spawning(-1);
         }
 
-        if(col.tag == "Player")
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        }
-
         if(col.tag == "Ball" || col.tag == "gBall" || col.tag == "Bullet")
         {
             Destroy(col.gameObject);
         }
+    }
 
+    void OnTriggerStay2D(Collider2D co)
+    {
+        if(co.tag == "Player")
+        {
+            if(Time.time > actionTime)
+            {
+                actionTime = Time.time;
+                actionTime += 0.2f;
+                ball.health -= 1;
+            }
+        }
     }
 }

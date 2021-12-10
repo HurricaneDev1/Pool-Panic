@@ -293,7 +293,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 324.1, y: -140}
+  m_AnchoredPosition: {x: 338.6, y: -147.3}
   m_SizeDelta: {x: 106.96, y: 34.96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &144528118
@@ -1570,7 +1570,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.33, y: -9}
+  m_AnchoredPosition: {x: -2.33, y: 1}
   m_SizeDelta: {x: 661.78, y: 241.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &500579684
@@ -1593,10 +1593,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: To move the character you use the W, A S and D keys. To shoot the cue ball
-    just aim with the mouse and left click to shoot. To shoot another cue ball you
-    must pick up the one you just shot, by hitting it with your cue stick. A cue
-    ball will show up in the top left if you are currently holiding one.
+  m_text: "\tTo move the character you use the W, A S and D keys. To shoot the cue
+    ball just aim with the mouse and left click to shoot. To shoot another cue ball
+    you must pick up the one you just shot, by hitting it with your cue stick. A
+    cue ball will show up in the top left if you are currently holiding one. If you
+    have not touched the cue ball for five seconds you can click E to bring it back."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1623,8 +1624,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 27.5
+  m_fontSizeBase: 27.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3437,7 +3438,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -333, y: -147.5}
+  m_AnchoredPosition: {x: -339.7, y: -147.5}
   m_SizeDelta: {x: 106.96, y: 34.96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1378428217
@@ -4080,7 +4081,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.33, y: -13}
+  m_AnchoredPosition: {x: -2.33, y: -2}
   m_SizeDelta: {x: 661.78, y: 241.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1674776056
@@ -4103,13 +4104,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'The Objective of the game is to last as many waves as possible before
-    falling in a hole, or losing all of your hearts. Hearts are lost whenever a ball
-    besides your cue ball hits the cue stick. Each wave has more enemies then the
-    last, and some enemies don''t show up till later waves.  A wave is over once
-    all balls on screen are gone (Except the cue ball). To do this you hit balls
-    into holes with the cue ball. Keep in mind that if you hit the cue ball into
-    a hole a random enemy will spawn. '
+  m_text: "\tThe Objective of the game is to last as many waves as possible before
+    losing all of your hearts. Hearts are lost whenever a ball besides your cue ball
+    hits the cue stick as well as when the player touches a hole. \n\tEach wave has
+    more enemies then the last, and some enemies don't show up till later waves. 
+    A wave is over once all balls on screen are gone (Except the cue ball). To do
+    this you hit balls into holes with the cue ball. Keep in mind that if you hit
+    the cue ball into a hole a random enemy will spawn. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4626,7 +4627,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 133}
+  m_AnchoredPosition: {x: 0, y: 136.7}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1889726363
@@ -4762,7 +4763,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -333, y: -147.5}
+  m_AnchoredPosition: {x: -341.3, y: -147.5}
   m_SizeDelta: {x: 106.96, y: 34.96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1911125482
@@ -5357,7 +5358,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 328.4, y: -143.9}
+  m_AnchoredPosition: {x: 337.7, y: -147.5}
   m_SizeDelta: {x: 106.96, y: 34.96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2124609064

@@ -50,13 +50,13 @@ public class ObjectiveScript : MonoBehaviour
 
                 else if(wave == 2)
                 {
-                    ballList.Add(eBall);
+                    ballList.Add(dasher);
                 }
 
                 else if(wave == 4)
                 {
                     ballList.Add(googly);
-                    ballList.Add(dasher);
+                    ballList.Add(eBall);
                 }
 
                 else if(wave == 7)

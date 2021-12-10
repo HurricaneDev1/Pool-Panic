@@ -45,7 +45,7 @@ public class Magic : MonoBehaviour
         Rigidbody2D rig = bull.GetComponent<Rigidbody2D>();
         rig.AddForce(firepoint.transform.up * speed, ForceMode2D.Impulse);
         bullets.Add(bull);
-        Invoke("makeTrigger", 0.3f);
+        Invoke("makeTrigger", 0.2f);
         Invoke("clearBullets", 4.5f);
     }
 

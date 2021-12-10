@@ -5,12 +5,13 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class BallShooting : MonoBehaviour
 {
+    public float goneTime;
+    GameObject ballG;
     public bool invisible = false;
     public int ammo;
     public float moveSpeed;
     Vector2 movement;
     public Camera cam;
-    public Rigidbody2D rb;
     public Transform firePoint;
     public GameObject cueBall;
     public float ballSpeed = 20f;
@@ -60,12 +61,35 @@ public class BallShooting : MonoBehaviour
                 ammo --;
             }
         }
+
+        if(health <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            if(ammo < 1)
+            {
+                if(Time.time > goneTime)
+                {
+                    Destroy(ballG);
+                    ammo ++;
+                }
+            }
+
+            else
+            {
+                goneTime = Time.time;
+                goneTime += 5;
+            }
+        }
     }
 
     void Shoot()
     {
-        GameObject ball = Instantiate(cueBall,firePoint.position,firePoint.rotation);
-        Rigidbody2D rig = ball.GetComponent<Rigidbody2D>();
+        ballG = Instantiate(cueBall,firePoint.position,firePoint.rotation);
+        Rigidbody2D rig = ballG.GetComponent<Rigidbody2D>();
         if(strongShot == true)
         {
             ballSpeed = 75;
@@ -73,6 +97,8 @@ public class BallShooting : MonoBehaviour
         rig.AddForce(firePoint.up * ballSpeed, ForceMode2D.Impulse);
         ballSpeed = 30f;
         strongShot = false;
+        goneTime = Time.time;
+        goneTime += 5;
     }
 
     void OnTriggerEnter2D(Collider2D col)
